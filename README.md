@@ -1,2 +1,67 @@
-# Sea-battle-
-It is game which we have to find where is the ship
+# traffic flow opitiimization 
+# prompt: mport matplotlib.pyplot as plt
+# Import numpy as np
+# #Traffic flow parameters
+# road1_traffic 100# vehicles per hour
+# road2_traffic 150 vehicles per hour
+# saturation_flow_rate 1800 vehicles per hour
+# cycle length 90 seconds.
+# green_time_road140 # seconds
+# green time_road2 cycle length green time_road # seconds.
+# #Calculate the capacity of each road
+# capacity_road1 (green time_road! / cycle_length) capacity_road2 (green_time_road2 / cycle_length) saturation_flow_rate saturation_flow_rate
+# road1_traffic capacity_road1 #Calculate the degree of saturation for each road degree_of_saturation_road degree_of_saturation_road2
+# road2_traffic / capacity_road2
+# #Print the results
+# print(f"Degree of saturation for Road 1: (degree_of_saturation_road1:.2f}") print(f"Degree of saturation for Road 2: (degree of saturation_road2.2f)")
+# #Plot the results
+# plt.bar (["Road 1", "Road 2"], [degree_of_saturation_road1, degree_of_saturation_road2]) plt.xlabel("Road") plt.ylabel("Degree of Saturation") plt.title("Traffic Flow Optimization") plt.show()
+# #Optimize the green time for each road to minimize congestion optimal green time_road1 (road traffic / (roadl traffic road traffic)) cycle length optimal green_time_road? cycle_length optimal_green_time_roadt
+# #Calculate the optimal degree of saturation for each road.
+# optimal capacity road (optimal green time road/cycle length) saturation flow rate optimal capacity_road2 (optimal_green_time_road2/ cycle_length) saturation_flow_rate optimal_degree_of_saturation_road road1_traffic optimal_degree_of_saturation_road2 road2 traffic optimal_capacity_road1 optimal_capacity road2
+# #Print the optimal results
+# print(f"Optimal degree of saturation for Road 1: (optimal_degree_of_saturation_road1:.2f)") print(f"Optimal degree of saturation for Road 2: (optimal degree of saturation road2:.2f)")
+# #Plot the optimal results plt.bar(("Road 1", "Road 2"], [optimal_degree_of_saturation_road1, optimal degree_of saturation_road plt.xlabel("Road") plt.ylabel("Optinal
+
+import matplotlib.pyplot as plt
+import numpy as np
+#Traffic flow parameters
+road1_traffic = 100 # vehicles per hour
+road2_traffic = 150 # vehicles per hour
+saturation_flow_rate = 1800 # vehicles per hour
+cycle_length = 90 # seconds.
+green_time_road1 = 40 # seconds
+green_time_road2 = cycle_length - green_time_road1 # seconds.
+#Calculate the capacity of each road
+capacity_road1 = (green_time_road1 / cycle_length) * saturation_flow_rate
+capacity_road2 = (green_time_road2 / cycle_length) * saturation_flow_rate
+#Calculate the degree of saturation for each road
+degree_of_saturation_road1 = road1_traffic / capacity_road1 
+degree_of_saturation_road2 = road2_traffic / capacity_road2
+#Print the results
+print(f"Degree of saturation for Road 1: {degree_of_saturation_road1:.2f}") 
+print(f"Degree of saturation for Road 2: {degree_of_saturation_road2:.2f}")
+#Plot the results
+plt.bar (["Road 1", "Road 2"], [degree_of_saturation_road1, degree_of_saturation_road2]) 
+plt.xlabel("Road") 
+plt.ylabel("Degree of Saturation") 
+plt.title("Traffic Flow Optimization") 
+plt.show()
+#Optimize the green time for each road to minimize congestion
+optimal_green_time_road1 = (road1_traffic / (road1_traffic + road2_traffic)) * cycle_length
+optimal_green_time_road2 = cycle_length - optimal_green_time_road1
+#Calculate the optimal degree of saturation for each road.
+optimal_capacity_road1 = (optimal_green_time_road1 / cycle_length) * saturation_flow_rate
+optimal_capacity_road2 = (optimal_green_time_road2 / cycle_length) * saturation_flow_rate
+optimal_degree_of_saturation_road1 = road1_traffic / optimal_capacity_road1
+optimal_degree_of_saturation_road2 = road2_traffic / optimal_capacity_road2
+#Print the optimal results
+print(f"Optimal degree of saturation for Road 1: {optimal_degree_of_saturation_road1:.2f}") 
+print(f"Optimal degree of saturation for Road 2: {optimal_degree_of_saturation_road2:.2f}")
+#Plot the optimal results 
+plt.bar(["Road 1", "Road 2"], [optimal_degree_of_saturation_road1, optimal_degree_of_saturation_road2]) 
+plt.xlabel("Road") 
+plt.ylabel("Optimal Degree of Saturation") # Corrected ylabel
+plt.title("Optimal Traffic Flow Optimization") # Added a title for clarity
+plt.show()
+```
